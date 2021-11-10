@@ -1,0 +1,26 @@
+<div class='row'>
+    <div *ngIf="restaurant">
+        <h4>{{restaurant.naam}}</h4>
+        <p>{{restaurant.categorie}}</p>
+        <p>Openingstijden: {{restaurant.openingstijden}}</p>
+        <p>Afhalen: {{restaurant.afhalen === true ? '&#9745;' : '&#9746;' }}</p>
+        <p>Bezorging: {{restaurant.bezorgen === true ? '&#9745;' : '&#9746;' }}</p>
+        <p *ngIf="restaurant.bezorgen">Bezorgt in {{restaurant.bezorgtijden}} minuten</p>
+        <p *ngIf="restaurant.bezorgen">Bezorgkosten: {{restaurant.bezorgprijs | currency:'EUR':'symbol':'1.2-2'}}</p>
+        <img [src]="restaurant.imageUrl"/>
+        <br><select [(ngModel)]="categorieFilter" (ngModelChange)="filterChanged()" name="categorie">
+            <option value="default" selected>Filter op Categorie</option>
+            <option *ngFor="let categorie of etenCategories" value="{{categorie}}">{{categorie}}</option>
+        </select>
+    </div>
+</div>
+<div class='row'>
+    <div *ngFor="let eten of filteredEten" class='col-12 col-sm-6 col-md-4 col-lg-3'>
+        <h6 class='etennaam'>{{eten.naam}}</h6>
+        <img class='etenplaatje' [src]="eten.imageUrl"/>
+        <p>{{eten.categorie}}</p>
+        <p>{{eten.prijs | currency:'EUR':'symbol':'1.2-2'}}</p>
+        <button (click)="winkelWagenToevoegen(eten.etenId, eten.restaurantId)">Aan Winkelwagen Toevoegen</button>
+    </div>
+</div>
+<router-outlet></router-outlet>

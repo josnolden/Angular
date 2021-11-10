@@ -1,0 +1,74 @@
+[
+    {
+        "etenId": 1,
+        "restaurantId": 2,
+        "naam": "Patat",
+        "categorie": "fastfood",
+        "prijs": 1.50,
+        "imageUrl": "assets/images/patat.png",
+        "aantal": 0
+    },
+    {
+        "etenId": 2,
+        "restaurantId": 1,
+        "naam": "Pizza",
+        "categorie": "Pizza",
+        "prijs": 3.00,
+        "imageUrl": "assets/images/pizza.png",
+        "aantal": 0
+    },
+    {
+        "etenId": 3,
+        "restaurantId": 3,
+        "naam": "Taco",
+        "categorie": "tortilla",
+        "prijs": 1.00,
+        "imageUrl": "assets/images/taco.png",
+        "aantal": 0
+    },
+    {
+        "etenId": 4,
+        "restaurantId": 2,
+        "naam": "Hamburger",
+        "categorie": "fastfood",
+        "prijs": 1.00,
+        "imageUrl": "assets/images/hamburger.png",
+        "aantal": 0
+    },
+    {
+        "etenId": 5,
+        "restaurantId": 5,
+        "naam": "Brood",
+        "categorie": "brood",
+        "prijs": 0.50,
+        "imageUrl": "assets/images/brood.png",
+        "aantal": 0
+    },
+    {
+        "etenId": 6,
+        "restaurantId": 4,
+        "naam": "Gyros",
+        "categorie": "fastfood",
+        "prijs": 1.50,
+        "imageUrl": "assets/images/gyros.png",
+        "aantal": 0
+    },
+    {
+        "etenId": 7,
+        "restaurantId": 4,
+        "naam": "Shawarma",
+        "categorie": "kebab",
+        "prijs": 2.50,
+        "imageUrl": "assets/images/shawarma.png",
+        "aantal": 0
+    },
+    {
+        "etenId": 8,
+        "restaurantId": 4,
+        "naam": "Döner Kebab",
+        "categorie": "kebab",
+        "prijs": 1.00,
+        "imageUrl": "assets/images/kebab.png",
+        "aantal": 0
+    }
+]

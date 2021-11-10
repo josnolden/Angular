@@ -1,0 +1,21 @@
+<p></p>
+<div class='row'>
+    <div class='col-md-6'>
+        Zoek naar restaurant of soort: <input type='text' [(ngModel)]='zoekFilter'/>
+        <div [ngClass]="{'filterster': !sterFilter, 'filteredster': sterFilter}" class="filterster" (click)="toggleFavorietenFilter()" title="Toon enkel favorieten"></div>
+    </div>
+</div>
+<div class='row'>
+    <div *ngFor="let restaurant of filteredRestaurants" class='col-12 col-lg-3 col-md-4 col-sm-6'>
+        <div class='kopje'>
+            <a class='restaurantnaam' href='/restaurants/{{restaurant.restaurantId}}'>{{restaurant.naam}}</a><div *ngIf="restaurant.favoriet; then favoriet else geenfavoriet">div></div>
+        </div>
+        <div class='restaurantplaatje'><img [src]="restaurant.imageUrl"/></div>
+        <p>{{restaurant.categorie}}</p>
+        <p>Openingstijden: {{restaurant.openingstijden}}</p>
+        <button a routerLink='/restaurants/{{restaurant.restaurantId}}'>Meer informatie</button>
+        <ng-template #favoriet><div class="favorietster" (click)="toggleFavoriet(restaurant.restaurantId)" title="Verwijderen uit favorieten"></div></ng-template>
+        <ng-template #geenfavoriet><div class="legester" (click)="toggleFavoriet(restaurant.restaurantId)" title="Toevoegen aan favorieten"></div></ng-template>
+    </div>
+</div>
+<router-outlet></router-outlet>

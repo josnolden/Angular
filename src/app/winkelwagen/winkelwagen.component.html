@@ -1,0 +1,39 @@
+<button (click)="winkelWagenLegen()">Leegmaken</button>
+<div class='row'>
+    <div class='col-12 col-sm-6 col-md-3'></div>
+    <div class='col-6 col-md-7'>
+        <p>Aantal</p>
+    </div>
+    <div class='col-6 col-md-2'>
+        <p>Prijs</p>
+    </div>
+</div>
+<div *ngFor="let eten of eten" class='row'>
+    <div class='col-12 col-sm-6 col-md-3'>
+        <img class='etenplaatje' [src]="eten.imageUrl"/>
+    </div>
+    <div class='col-6 col-md-7'>
+        <p class='etennaam'>{{eten.naam}}</p><span>Aantal: {{eten.aantal}} </span> <button (click)="etenAantalPlus(eten.etenId, eten.restaurantId)">+</button> <button (click)="etenAantalMin(eten.etenId, eten.restaurantId)">{{eten.aantal == 1 ? 'Uit winkelwagen halen' : '-' }}</button>
+    </div>
+    <div class='col-6 col-md-2'>
+        <p>{{eten.prijs * eten.aantal | currency:'EUR':'symbol':'1.2-2'}}</p>
+    </div>
+</div>
+<div class='row'>
+    <div class='col-12 col-sm-6 col-md-3'>
+        <a *ngIf="this.winkelwagenService.aantalEtenInWinkelWagen !== 0" href='/restaurants/{{this.winkelwagenService.winkelwagenRestaurantId}}'>Terug naar restaurant</a>
+    </div>
+    <div class='col-6 col-md-7'>
+        <form>
+            <select [(ngModel)]="KeuzeAfhalenOfBezorgen" (ngModelChange)="dataChanged()" name="KeuzeAfhalenOfBezorgen">
+                <option *ngIf="this.winkelwagenService.ditRestaurantAfhalen" value='Afhalen' selected>Afhalen</option>
+                <option *ngIf="this.winkelwagenService.ditRestaurantBezorgt" value='Bezorgen'>Bezorgen</option>
+            </select>
+        </form>
+        <span *ngIf="this.winkelwagenService.KeuzeAfhalenOfBezorgen == 'Bezorgen' && this.winkelwagenService.ditRestaurantBezorgt">Bezorgkosten: {{this.winkelwagenService.bezorgKosten | currency:'EUR':'symbol':'1.2-2'}}</span>
+    </div>
+    <div class='col-6 col-md-2'>
+        <span>Totaal: {{this.winkelwagenService.totaalPrijs | currency:'EUR':'symbol':'1.2-2'}}</span>
+    </div>
+</div>
+<router-outlet></router-outlet>

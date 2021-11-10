@@ -1,0 +1,15 @@
+label {
+    margin-right: 10px;
+}
+.kopje {
+    text-align: center;
+    margin: 10px 0px;
+}
+
+.form-group {
+    margin: 10px 0px;
+}
+
+#bezorgen, #afhalen {
+    margin-right: 5px;
+}

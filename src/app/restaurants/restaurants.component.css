@@ -1,0 +1,59 @@
+.restaurantnaam {
+  font-weight: bold;
+  margin-right: 3px;
+}
+.kopje {
+  text-align: center;
+}
+.restaurantplaatje {
+  text-align: center;
+}
+
+/*Favorietster in filter*/
+.filterster {
+  width: 30px;
+  height: 30px;
+  margin-left: 10px;
+  margin-bottom: -5px;
+  background: url("../../assets/images/sterfilterzwart.png") no-repeat;
+  display: inline-block;
+}
+.filteredster {
+  width: 30px;
+  height: 30px;
+  margin-left: 10px;
+  margin-bottom: -5px;
+  background: url("../../assets/images/sterfilterwit.png") no-repeat;
+  display: inline-block;
+}
+
+/*Favorietster in overzicht*/
+.favorietster {
+  width: 20px;
+  height: 20px;
+  background: url("../../assets/images/stervol.png") no-repeat;
+  display: inline-block;
+}
+.favorietster:hover{
+  background: url('../../assets/images/sterrood.png') no-repeat;
+}
+.legester {
+  width: 20px;
+  height: 20px;
+  background: url("../../assets/images/sterleeg.png") no-repeat;
+  display: inline-block;
+}
+.legester:hover{
+  background: url('../../assets/images/sterklik.png') no-repeat;
+}
+/* @media screen and (max-width: 1000px) {
+  .row > .col-3 { width: 33%;}
+}
+
+@media screen and (max-width: 750px) {
+    .row > .col-3 { width: 50%;}
+}
+
+@media screen and (max-width: 500px) {
+  .row > .col-3 { width: 100%;}
+} */

@@ -1,1 +1,15 @@
+/* @import url('https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css'); */
 /* You can add global styles to this file, and also import other style files */
+@media screen and (max-width: 767px) {
+    /*responsive styles*/
+}
+
+@media screen and (max-width: 575px) {
+    /*responsive styles*/
+}
+
+
+html, body { 
+    height: 100%;
+    margin: 0;
+}

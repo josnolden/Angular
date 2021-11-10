@@ -1,0 +1,74 @@
+[
+    {
+      "restaurantId": 1,
+      "naam": "Ristorante Roma",
+      "favoriet": false,
+      "categorie": "Pizzeria",
+      "openingstijden": "9:00-15:30",
+      "bezorgtijden": 30,
+      "bezorgprijs": 2.50,
+      "bezorgen": true,
+      "afhalen": true,
+      "imageUrl": "assets/images/pizzeria.png"
+    },
+    {
+      "restaurantId": 2,
+      "naam": "Duck",
+      "favoriet": false,
+      "categorie": "Cafetaria",
+      "openingstijden": "12:00-20:00",
+      "bezorgtijden": 0,
+      "bezorgprijs": 0,
+      "bezorgen": false,
+      "afhalen": true,
+      "imageUrl": "assets/images/patatkraam.png"
+    },
+    {
+      "restaurantId": 3,
+      "naam": "De Drie Principes",
+      "favoriet": false,
+      "categorie": "Chinees",
+      "openingstijden": "9:00-17:30",
+      "bezorgtijden": 30,
+      "bezorgprijs": 3.00,
+      "bezorgen": true,
+      "afhalen": true,
+      "imageUrl": "assets/images/chinees.png"
+    },
+    {
+      "restaurantId": 4,
+      "naam": "Georgios",
+      "favoriet": false,
+      "categorie": "Grieks",
+      "openingstijden": "11:00-16:00",
+      "bezorgtijden": 30,
+      "bezorgprijs": 0.00,
+      "bezorgen": true,
+      "afhalen": true,
+      "imageUrl": "assets/images/grieks.png"
+    },
+    {
+      "restaurantId": 5,
+      "naam": "Dierenvrienden",
+      "favoriet": false,
+      "categorie": "Vegetarisch",
+      "openingstijden": "8:00-16:30",
+      "bezorgtijden": 30,
+      "bezorgprijs": 4.50,
+      "bezorgen": true,
+      "afhalen": true,
+      "imageUrl": "assets/images/koe.png"
+    },
+    {
+      "restaurantId": 6,
+      "naam": "Friet Speciaal Zaak",
+      "favoriet": false,
+      "categorie": "Cafetaria",
+      "openingstijden": "12:30-21:30",
+      "bezorgtijden": 0,
+      "bezorgprijs": 0,
+      "bezorgen": false,
+      "afhalen": true,
+      "imageUrl": "assets/images/speciaalzaak.png"
+    }
+]
