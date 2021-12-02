@@ -3,7 +3,7 @@
         "etenId": 1,
         "restaurantId": 2,
         "naam": "Patat",
-        "categorie": "fastfood",
+        "categorie": "Fastfood",
         "prijs": 1.50,
         "imageUrl": "assets/images/patat.png",
         "aantal": 0
@@ -21,7 +21,7 @@
         "etenId": 3,
         "restaurantId": 3,
         "naam": "Taco",
-        "categorie": "tortilla",
+        "categorie": "Tortilla",
         "prijs": 1.00,
         "imageUrl": "assets/images/taco.png",
         "aantal": 0
@@ -30,7 +30,7 @@
         "etenId": 4,
         "restaurantId": 2,
         "naam": "Hamburger",
-        "categorie": "fastfood",
+        "categorie": "Fastfood",
         "prijs": 1.00,
         "imageUrl": "assets/images/hamburger.png",
         "aantal": 0
@@ -39,7 +39,7 @@
         "etenId": 5,
         "restaurantId": 5,
         "naam": "Brood",
-        "categorie": "brood",
+        "categorie": "Brood",
         "prijs": 0.50,
         "imageUrl": "assets/images/brood.png",
         "aantal": 0
@@ -48,7 +48,7 @@
         "etenId": 6,
         "restaurantId": 4,
         "naam": "Gyros",
-        "categorie": "fastfood",
+        "categorie": "Fastfood",
         "prijs": 1.50,
         "imageUrl": "assets/images/gyros.png",
         "aantal": 0
@@ -57,7 +57,7 @@
         "etenId": 7,
         "restaurantId": 4,
         "naam": "Shawarma",
-        "categorie": "kebab",
+        "categorie": "Kebab",
         "prijs": 2.50,
         "imageUrl": "assets/images/shawarma.png",
         "aantal": 0
@@ -66,9 +66,135 @@
         "etenId": 8,
         "restaurantId": 4,
         "naam": "Döner Kebab",
-        "categorie": "kebab",
+        "categorie": "Kebab",
         "prijs": 1.00,
         "imageUrl": "assets/images/kebab.png",
+        "aantal": 0
+    },
+    {
+        "etenId": 9,
+        "restaurantId": 5,
+        "naam": "Stokbrood",
+        "categorie": "Brood",
+        "prijs": 0.50,
+        "imageUrl": "assets/images/stokbrood.png",
+        "aantal": 0
+    },
+    {
+        "etenId": 10,
+        "restaurantId": 6,
+        "naam": "Friet Speciaal",
+        "categorie": "Fastfood",
+        "prijs": 2.70,
+        "imageUrl": "assets/images/friet.png",
+        "aantal": 0
+    },
+    {
+        "etenId": 11,
+        "restaurantId": 7,
+        "naam": "Frikandel Speciaal",
+        "categorie": "Fastfood",
+        "prijs": 3.00,
+        "imageUrl": "assets/images/frikandel.png",
+        "aantal": 0
+    },
+    {
+        "etenId": 12,
+        "restaurantId": 7,
+        "naam": "Broodje Lasagna",
+        "categorie": "Brood",
+        "prijs": 2.00,
+        "imageUrl": "assets/images/lasagna.png",
+        "aantal": 0
+    },
+    {
+        "etenId": 13,
+        "restaurantId": 7,
+        "naam": "Friet Speciaal",
+        "categorie": "Fastfood",
+        "prijs": 2.50,
+        "imageUrl": "assets/images/frietspeciaal.png",
+        "aantal": 0
+    },
+    {
+        "etenId": 14,
+        "restaurantId": 1,
+        "naam": "Spaghetti met saus",
+        "categorie": "Pasta",
+        "prijs": 2.00,
+        "imageUrl": "assets/images/spaghetti.png",
+        "aantal": 0
+    },
+    {
+        "etenId": 15,
+        "restaurantId": 1,
+        "naam": "Macaroni pasta",
+        "categorie": "Pasta",
+        "prijs": 3.15,
+        "imageUrl": "assets/images/macaroni.png",
+        "aantal": 0
+    },
+    {
+        "etenId": 16,
+        "restaurantId": 1,
+        "naam": "Penne pasta",
+        "categorie": "Pasta",
+        "prijs": 3.65,
+        "imageUrl": "assets/images/penne.png",
+        "aantal": 0
+    },
+    {
+        "etenId": 17,
+        "restaurantId": 5,
+        "naam": "Vegatarische salade",
+        "categorie": "Salade",
+        "prijs": 1.50,
+        "imageUrl": "assets/images/salade.png",
+        "aantal": 0
+    },
+    {
+        "etenId": 18,
+        "restaurantId": 5,
+        "naam": "Tomatensoep",
+        "categorie": "Soep",
+        "prijs": 1.00,
+        "imageUrl": "assets/images/tomatensoep.png",
+        "aantal": 0
+    },
+    {
+        "etenId": 19,
+        "restaurantId": 4,
+        "naam": "Goulash",
+        "categorie": "Goulash",
+        "prijs": 1.00,
+        "imageUrl": "assets/images/goulash.png",
+        "aantal": 0
+    },
+    {
+        "etenId": 20,
+        "restaurantId": 4,
+        "naam": "Moussaka",
+        "categorie": "Ovenschotel",
+        "prijs": 3.00,
+        "imageUrl": "assets/images/moussaka.png",
+        "aantal": 0
+    },
+    {
+        "etenId": 21,
+        "restaurantId": 4,
+        "naam": "Baklava",
+        "categorie": "Dessert",
+        "prijs": 3.00,
+        "imageUrl": "assets/images/baklava.png",
+        "aantal": 0
+    },
+    {
+        "etenId": 22,
+        "restaurantId": 8,
+        "naam": "Vlees",
+        "categorie": "Vlees",
+        "prijs": 3.00,
+        "imageUrl": "assets/images/vlees.png",
         "aantal": 0
     }
 ]

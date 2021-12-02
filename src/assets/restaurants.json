@@ -56,7 +56,7 @@
       "bezorgtijden": 30,
       "bezorgprijs": 4.50,
       "bezorgen": true,
-      "afhalen": true,
+      "afhalen": false,
       "imageUrl": "assets/images/koe.png"
     },
     {
@@ -70,5 +70,29 @@
       "bezorgen": false,
       "afhalen": true,
       "imageUrl": "assets/images/speciaalzaak.png"
+    },
+    {
+      "restaurantId": 7,
+      "naam": "Vieze Henk's Vette Hap",
+      "favoriet": false,
+      "categorie": "Cafetaria",
+      "openingstijden": "17:30-23:00",
+      "bezorgtijden": 0,
+      "bezorgprijs": 0,
+      "bezorgen": true,
+      "afhalen": true,
+      "imageUrl": "assets/images/henkshap.png"
+    },
+    {
+      "restaurantId": 8,
+      "naam": "Van Vleuten",
+      "favoriet": false,
+      "categorie": "Slager",
+      "openingstijden": "10:00-17:30",
+      "bezorgtijden": 15,
+      "bezorgprijs": 2.00,
+      "bezorgen": true,
+      "afhalen": true,
+      "imageUrl": "assets/images/slager.png"
     }
 ]

@@ -46,6 +46,22 @@
 .legester:hover{
   background: url('../../assets/images/sterklik.png') no-repeat;
 }
+
+/*restaurant items*/
+.restaurantItem:nth-child(even){
+  background-color: white;
+}
+.restaurantItem:nth-child(odd){
+  background-color: lightgrey;
+}
+.restaurantItem {
+  margin: 10px 0px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+
+
 /* @media screen and (max-width: 1000px) {
   .row > .col-3 { width: 33%;}
 }

@@ -1,3 +1,17 @@
 .etenplaatje {
     text-align: center;
 }
+
+.etenItem {
+    margin: 10px 0px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.etenItem:nth-child(even){
+    background-color: white;
+}
+        
+.etenItem:nth-child(odd){
+    background-color: lightgrey;
+}

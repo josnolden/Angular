@@ -1,40 +1,50 @@
 <h3 class="kopje">Contact</h3>
 <div class='row'>
-    <div class="container col-md-6">
+    <div class="container col-md-6 linkerhelft">
         <p class="form-group">Wilt u uw restaurant in onze website aanmelden? Vul hier dan de gegevens van uw vestiging in Alkmaar in. Wij zullen zo spoedig mogelijk op uw aanvraag reageren.</p>
+        <p>Velden met een * zijn verplicht.</p>
     </div>
     <div class="container col-md-6">
         <form #contactFormulier="ngForm" (ngSubmit)="submit(contactFormulier)">
             <div class="form-group">
-                <label for="naam">Restaurantnaam</label>
-                <input id="naam" name="naam" required class="form-control" ngModel/>
+                <label for="naam">Restaurantnaam *</label>
+                <input id="naam" name="naam" class="form-control" [(ngModel)]="formulier.naam" #naam="ngModel" [ngClass]="{ 'is-invalid': contactFormulier.submitted && naam.invalid }" required/>
+                <div *ngIf="contactFormulier.submitted && naam.invalid" class="invalid-feedback">
+                    Vul een naam in.
+                </div>
             </div>
             <div class="form-group">
                 <label for="adres">Adres</label>
                 <input type="text" id="adres" name="adres" class="form-control" ngModel/>
                 <label for="postcode">Postcode</label>
-                <input id="postcode" name="postcode" class="form-control" maxlength="6" pattern="[0-9]{4}[A-Z]{2}" ngModel/>
+                <input id="postcode" name="postcode" class="form-control" [(ngModel)]="formulier.postcode" #postcode="ngModel" [ngClass]="{ 'is-invalid': contactFormulier.submitted && postcode.invalid }" maxlength="6" pattern="[0-9]{4}[A-Z]{2}"/>
+                <div *ngIf="contactFormulier.submitted && postcode.invalid" class="invalid-feedback">
+                    Vul een geldige postcode in.
+                </div>
             </div>
             <div class="form-group">
                 <label for="categorie">Soort restaurant:</label>
-                <select id="categorie" name="categorie" ngModel>
-                    <option>Anders</option>
+                <select [(ngModel)]="categorie" name="categorie" ngModel>
+                    <option value="Anders" selected>Anders</option>
                     <option *ngFor="let categorie of restaurantCategories" value="{{categorie}}">{{categorie}}</option>
-                </select>
-                <br><input type="checkbox" id="bezorgen" name="bezorgen" ngModel>
+                </select> *
+                <br><input class="checkbox" type="checkbox" [(ngModel)]="bezorgen" name="bezorgen" ngModel>
                 <label for="bezorgen"> Bezorging</label>
-                <br><input type="checkbox" id="afhalen" name="afhalen" ngModel>
+                <br><input class="checkbox" type="checkbox" [(ngModel)]="afhalen" name="afhalen" ngModel>
                 <label for="afhalen"> Afhalen</label>
             </div>
             <div class="form-group">
-                <label for="email">E-mailadres</label>
-                <input type="email" id="email" required name="email" class="form-control" ngModel/>
+                <label for="email">E-mailadres *</label>
+                <input type="email" id="email" name="email" class="form-control" [(ngModel)]="formulier.email" #email="ngModel" [ngClass]="{ 'is-invalid': contactFormulier.submitted && email.invalid }" required email/>
+                <div *ngIf="contactFormulier.submitted && email.invalid" class="invalid-feedback">
+                    Vul een e-mailadres in.
+                </div>
             </div>
             <div class="form-group">
                 <label for="bericht">Bericht</label>
                 <textarea id="bericht" name="bericht" class="form-control" rows="3" ngModel></textarea>
             </div>
-            <input type="submit" class="btn btn-primary" value="Verzenden">
+            <input type="submit" class="btn btn-primary" value="Verzenden &#9993;">
         </form>
     </div>
 </div>

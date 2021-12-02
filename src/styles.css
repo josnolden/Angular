@@ -12,4 +12,12 @@
 html, body { 
     height: 100%;
     margin: 0;
+    background: url('/assets/images/alkmaar.png') no-repeat;
+    background-size: cover;
+}
+
+@media screen and (max-width: 575px) {
+    html, body {
+        background: url('/assets/images/alkmaarmidden.png') no-repeat;
+    }
 }

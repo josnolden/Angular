@@ -67,7 +67,6 @@ export class RestaurantComponent implements OnInit {
     if(!localStorage.getItem('aantalInWinkelwagen')) {
       localStorage.setItem('aantalInWinkelwagen', JSON.stringify(0));
     }
-    console.log('INIT Restaurant');
   }
 
 }

@@ -1,4 +1,4 @@
-<p></p>
+<br>
 <div class='row'>
     <div class='col-md-6'>
         Zoek naar restaurant of soort: <input type='text' [(ngModel)]='zoekFilter'/>
@@ -6,7 +6,7 @@
     </div>
 </div>
 <div class='row'>
-    <div *ngFor="let restaurant of filteredRestaurants" class='col-12 col-lg-3 col-md-4 col-sm-6'>
+    <div *ngFor="let restaurant of filteredRestaurants" class='col-12 col-lg-3 col-md-4 col-sm-6 restaurantItem'>
         <div class='kopje'>
             <a class='restaurantnaam' href='/restaurants/{{restaurant.restaurantId}}'>{{restaurant.naam}}</a><div *ngIf="restaurant.favoriet; then favoriet else geenfavoriet">div></div>
         </div>
@@ -18,4 +18,5 @@
         <ng-template #geenfavoriet><div class="legester" (click)="toggleFavoriet(restaurant.restaurantId)" title="Toevoegen aan favorieten"></div></ng-template>
     </div>
 </div>
+<br>
 <router-outlet></router-outlet>

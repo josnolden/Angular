@@ -1,3 +1,4 @@
+<br>
 <button (click)="winkelWagenLegen()">Leegmaken</button>
 <div class='row'>
     <div class='col-12 col-sm-6 col-md-3'></div>
@@ -8,7 +9,7 @@
         <p>Prijs</p>
     </div>
 </div>
-<div *ngFor="let eten of eten" class='row'>
+<div *ngFor="let eten of eten" class='row lijstItem'>
     <div class='col-12 col-sm-6 col-md-3'>
         <img class='etenplaatje' [src]="eten.imageUrl"/>
     </div>
@@ -36,4 +37,31 @@
         <span>Totaal: {{this.winkelwagenService.totaalPrijs | currency:'EUR':'symbol':'1.2-2'}}</span>
     </div>
 </div>
-<router-outlet></router-outlet>
+<div class='row'>
+    <div class='col-12 col-sm-6 col-md-3'></div>
+    <div class='col-6 col-md-7'></div>
+    <div class='col-6 col-md-2'>
+        <button *ngIf="this.winkelwagenService.aantalEtenInWinkelWagen !== 0" (click)="betalen()">Betalen &#10003;</button>
+    </div>
+</div>
+
+<div class="modal fade" tabindex="-1" role="dialog" id="bon">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div *ngIf="this.winkelwagenService.aantalEtenInWinkelWagen !== 0" id="bonInhoud">
+                    <img [src]="this.winkelwagenService.ditRestaurantPlaatje" class="miniRestaurantPlaatje"/>
+                    <h5>{{this.winkelwagenService.ditRestaurantNaam}}</h5>
+                    <div *ngFor="let eten of eten" class='row'>
+                        <div class='col-4'>{{eten.naam}}</div><div class='col-3'></div><div class='col-3' style='text-align: right;'>Aantal: {{eten.aantal}}</div><div class='col-2' style='text-align: right;'>{{eten.prijs | currency:'EUR':'symbol':'1.2-2'}}</div>
+                    </div>
+                    <br>
+                    <p *ngIf="this.winkelwagenService.KeuzeAfhalenOfBezorgen == 'Afhalen'">Eten af te halen bij restaurant</p>
+                    <p *ngIf="this.winkelwagenService.KeuzeAfhalenOfBezorgen == 'Bezorgen'">Bezorgkosten: {{this.winkelwagenService.bezorgKosten | currency:'EUR':'symbol':'1.2-2'}}</p>
+                    <p>Totaal: {{this.winkelwagenService.totaalPrijs | currency:'EUR':'symbol':'1.2-2'}}</p>
+                    <button (click)="afrekenen()">Akkoord</button> <button (click)="betalingAnnuleren()">Terug naar winkelwagen</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

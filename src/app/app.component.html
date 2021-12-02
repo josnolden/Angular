@@ -9,7 +9,7 @@
     </div>
   </nav>
 </div>
-<div class='container main'>
+<div class='container main' [ngClass]="{'doorzichtig': this.router.url === '/start'}">
   <router-outlet></router-outlet>
 </div>
-<footer class='container footer'>Kopieright 2021 &copy;</footer>
+<footer class='container footer'>Copywright 2021 &copy;</footer>

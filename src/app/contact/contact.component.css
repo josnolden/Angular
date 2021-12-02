@@ -10,6 +10,10 @@ label {
     margin: 10px 0px;
 }
 
-#bezorgen, #afhalen {
+.checkbox {
     margin-right: 5px;
+}
+
+.linkerhelft {
+    background-color: lightgrey;
 }

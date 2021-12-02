@@ -13,12 +13,11 @@ export interface Eten {
   aantal: number;
 }
 
-
 @Injectable({
   providedIn: 'root'
 })
 export class WinkelwagenService {
-  private restaurantsNietDoorDeWarHalen: Restaurant[] = restaurantData;
+  private restaurants: Restaurant[] = restaurantData;
   public winkelwagenRestaurantId: number = 0;
 
   public eten: Eten[] = etenData;
@@ -31,13 +30,15 @@ export class WinkelwagenService {
   public KeuzeAfhalenOfBezorgen: string = '';
   public ditRestaurantBezorgt: boolean = true;
   public ditRestaurantAfhalen: boolean = true;
+  public ditRestaurantNaam: string = '';
+  public ditRestaurantPlaatje: string = '';
 
   constructor() { }
 
   //Zorgt voor aantal producten in winkelwagen knop
   aantalAanKnopToevoegen() {
     if(localStorage.getItem('aantalInWinkelwagen')){
-      this.aantalEtenInWinkelWagen = Number(JSON.parse(localStorage.getItem('aantalInWinkelwagen') as string));
+      this.aantalEtenOphalen();
       this.aantalEtenInWinkelWagen++;
       localStorage.setItem('aantalInWinkelwagen', JSON.stringify(this.aantalEtenInWinkelWagen));
     }
@@ -49,7 +50,7 @@ export class WinkelwagenService {
 
   //haalt 1 af van totaal aantal producten nummer in knop Winkelwagen
   eenVanKnopAfhalen() {
-    this.aantalEtenInWinkelWagen = Number(JSON.parse(localStorage.getItem('aantalInWinkelwagen') as string));
+    this.aantalEtenOphalen();
     this.aantalEtenInWinkelWagen--;
     localStorage.setItem('aantalInWinkelwagen', JSON.stringify(this.aantalEtenInWinkelWagen));
   }
@@ -104,17 +105,25 @@ export class WinkelwagenService {
     this.vertaalAantallen();
   }
 
-  //Aantallendata voor al het eten wordt uit localstorage gehaald(, gesorteerd op Id) en schrijft de data in de website uit de JSON over
+  //Aantallendata voor al het eten wordt uit localstorage gehaald en schrijft de data in de website uit de JSON over
   public vertaalAantallen(): void {
-    //let sorteerEten = JSON.parse(localStorage.getItem('eten') || '{}') as Eten[];
-    //this.eten = sorteerEten.sort((a, b) => a.etenId - b.etenId);
     this.eten = JSON.parse(localStorage.getItem('eten') || '{}') as Eten[]; //Sorteren niet meer nodig, houd het nog even hiero voor de zekerheid
+    this.aantalEtenOphalen();
     if(localStorage.getItem('restaurantInWinkelwagen')){
       this.winkelwagenRestaurantId = JSON.parse(localStorage.getItem('restaurantInWinkelwagen') || '') as number;
+      this.ditRestaurantNaam = this.restaurants.find(ditRestaurant => ditRestaurant.restaurantId === this.winkelwagenRestaurantId)?.naam as string;
+      this.ditRestaurantPlaatje = this.restaurants.find(ditRestaurant => ditRestaurant.restaurantId === this.winkelwagenRestaurantId)?.imageUrl as string;
     }
     else {
       localStorage.setItem('restaurantInWinkelwagen', JSON.stringify(0));
+      this.ditRestaurantNaam = '';
+      this.ditRestaurantPlaatje = '';
     }
+  }
+
+  //haalt aantal items in winkelwagen op uit localstorage; aparte functie anders geeft Angular irritante foutmeldingen bij laden winkelwagen
+  aantalEtenOphalen(): void {
+    this.aantalEtenInWinkelWagen = Number(localStorage.getItem('aantalInWinkelwagen'));
   }
 
   //rekent totaalprijs winkelwagen uit, inclusief bezorgkosten indien er bezorgt wordt
@@ -135,7 +144,7 @@ export class WinkelwagenService {
   //checkt of restaurant bezorgt en/of je dr kan afhalen
   checkRestaurantBezorgt(): void {
     if(this.winkelwagenRestaurantId > 0) {
-      let restaurantInWinkelwagen = this.restaurantsNietDoorDeWarHalen.find(ditRestaurant => ditRestaurant.restaurantId = this.winkelwagenRestaurantId);
+      let restaurantInWinkelwagen = this.restaurants.find(ditRestaurant => ditRestaurant.restaurantId === this.winkelwagenRestaurantId);
       if(restaurantInWinkelwagen?.afhalen) {
         this.ditRestaurantAfhalen = true;
       }
@@ -159,7 +168,7 @@ export class WinkelwagenService {
   bezorgprijsUitrekenen(): number {
     this.bezorgKosten = 0;
     if(this.ditRestaurantBezorgt) {
-      this.bezorgKosten = this.restaurantsNietDoorDeWarHalen.find(ditRestaurant => ditRestaurant.restaurantId === this.winkelwagenRestaurantId)?.bezorgprijs as number;
+      this.bezorgKosten = this.restaurants.find(ditRestaurant => ditRestaurant.restaurantId === this.winkelwagenRestaurantId)?.bezorgprijs as number;
     }
     return this.bezorgKosten;
   }

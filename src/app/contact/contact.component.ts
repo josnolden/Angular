@@ -22,7 +22,11 @@ export class ContactComponent implements OnInit {
 
   constructor() { }
 
-  formulier: Formulier[] =[];
+  //zorgt ervoor dat de juiste startwaarden in het formulier zijn
+  formulier: any = {};
+  public categorie: string = "Anders";
+  public bezorgen: boolean = true;
+  public afhalen: boolean = true;
 
   //Haalt alle unieke categoriën uit de restaurantdata en maakt er een array van voor de dropdown-lijst
   private restaurants = restaurantData;
@@ -30,7 +34,10 @@ export class ContactComponent implements OnInit {
 
   //Slaat de contactformulier gegevens op in de localstorage
   submit(contactFormulier: NgForm) {
-    localStorage.setItem('opgeslagenContactFormulier', JSON.stringify(contactFormulier.value));
+    if(contactFormulier.valid) {
+      localStorage.setItem('opgeslagenContactFormulier', JSON.stringify(contactFormulier.value));
+      alert('Uw gegevens zijn opgeslagen.');
+    }
   }
   
   ngOnInit(): void {
